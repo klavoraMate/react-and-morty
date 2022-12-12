@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
-import { useCharacters, useLocations } from "./api/useData";
 
 function App() {
-  const characters = useCharacters(1);
-  const locations = useLocations(1);
+  const [characters, setCharacters] = useState([]);
+  useEffect(() => {
+    fetch("https://akabab.github.io/starwars-api/api//all.json")
+      .then((response) => response.json())
+      .then((data) => setCharacters(data));
+  }, []);
 
-  console.log("Characters data: ");
-  console.log(characters);
-  console.log("Locations data: ");
-  console.log(locations);
-
-  return <div className="App">Take a look at the console! (F12)</div>;
+  return (
+    <div>
+      {characters.map((character) => (
+        <p>{character.name}</p>
+      ))}
+    </div>
+  );
 }
 
 export default App;
