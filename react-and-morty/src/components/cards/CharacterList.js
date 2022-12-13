@@ -1,11 +1,11 @@
+import Card from "./Card"
 
-const CharacterList = ({ characters }) => {
+const CharacterList = ({ characters}) => {
   return (
     <div>
       {characters.map((character) => (
-        <div key={character.id}>
-          <img src={character.image} alt={character.name} />
-          <h3>{character.name}</h3>
+        <div key={character.id} >
+          <Card img={character.image} name={character.name} identity="character"/>
         </div>
       ))}
     </div>
