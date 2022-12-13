@@ -3,7 +3,10 @@ const CharacterList = ({ characters }) => {
   return (
     <div>
       {characters.map((character) => (
-        <p key={character.name}>{character.name}</p>
+        <div key={character.id}>
+          <img src={character.image} alt={character.name} />
+          <h3>{character.name}</h3>
+        </div>
       ))}
     </div>
   )
