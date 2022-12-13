@@ -1,10 +1,12 @@
 
 const CharacterList = ({ characters }) => {
-  console.log('Characters: ', characters);
   return (
     <div>
       {characters.map((character) => (
-        <p key={character.id}>{character.name}</p>
+        <div key={character.id}>
+          <img src={character.image} alt={character.name} />
+          <h3>{character.name}</h3>
+        </div>
       ))}
     </div>
   )
