@@ -40,13 +40,13 @@ function App() {
         <Route
           path="/characters/:id"
           element={
-             <CharacterDescription/>
+            characters &&<CharacterDescription characters={characters.results}/>
           }
         />
         <Route
           path="/locations/:id"
           element={
-             <LocationDescription/>
+            locations &&  <LocationDescription  locations={locations.results}/>
           }
         />
       </Routes>
