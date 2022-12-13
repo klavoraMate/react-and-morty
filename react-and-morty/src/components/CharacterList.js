@@ -1,9 +1,10 @@
 
 const CharacterList = ({ characters }) => {
+  console.log('Characters: ', characters);
   return (
     <div>
       {characters.map((character) => (
-        <p key={character.name}>{character.name}</p>
+        <p key={character.id}>{character.name}</p>
       ))}
     </div>
   )

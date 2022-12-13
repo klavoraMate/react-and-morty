@@ -1,9 +1,8 @@
-import React from 'react'
 import { useState, useEffect } from 'react';
 
 
 const useFetch = (url) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
 
   useEffect(() => {
     fetch(url)
