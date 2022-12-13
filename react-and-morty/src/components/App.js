@@ -1,6 +1,6 @@
 import "./App.css";
 import Home from "./Home";
-import CharacterList from "./CharacterList";
+import CharacterList from "./cards/CharacterList";
 import LocationList from "./LocationList";
 import useFetch from "../api/useFetch";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
