@@ -1,19 +1,23 @@
 import Card from "./Card"
-import "../../style/cards.css"
 import { useParams } from 'react-router-dom';
+import useFetch from "../../api/useFetch";
+import { mainUrls } from "../../api/dataRoutes";
 
-const CharacterList = ({ characters, IDChange }) => {
+const CharacterList = () => {
   const { id } = useParams();
-  IDChange(id)
-  return (
-    <div className="character-list">
-      {characters.map((character) => (
-        <div className="card" key={character.id} >
-          <Card id={character.id} img={character.image} name={character.name} identity="character" />
-        </div>
-      ))}
-    </div>
-  )
+  const { data: characters } = useFetch(mainUrls.characters + id);
+  if (characters) {
+    return (
+      <div>
+        {characters.results.map((character) => (
+          <div key={character.id} >
+            <Card id={character.id} img={character.image} name={character.name} identity="character" />
+          </div>
+        ))}
+      </div>
+    )
+  }
+
 }
 
 export default CharacterList
