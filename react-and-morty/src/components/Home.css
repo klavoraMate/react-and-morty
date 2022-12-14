@@ -1,0 +1,17 @@
+* {
+  padding: 1vh;
+}
+
+.Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.r-a-m {
+  max-width: 50vh;
+}
+
+.logo {
+  max-height: 50vh;
+}
