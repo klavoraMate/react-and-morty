@@ -1,14 +1,15 @@
 import Card from "./Card"
+import "../../style/cards.css"
 import { useParams } from 'react-router-dom';
 
-const CharacterList = ({ characters,IDChange}) => {
-  const {id} = useParams();
+const CharacterList = ({ characters, IDChange }) => {
+  const { id } = useParams();
   IDChange(id)
   return (
-    <div>
+    <div className="character-list">
       {characters.map((character) => (
-        <div key={character.id} >
-          <Card id={character.id} img={character.image} name={character.name} identity="character"/>
+        <div className="card" key={character.id} >
+          <Card id={character.id} img={character.image} name={character.name} identity="character" />
         </div>
       ))}
     </div>
