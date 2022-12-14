@@ -5,48 +5,62 @@ import LocationList from "./cards/LocationList";
 import CharacterDescription from "./descriptions/CharacterDescription";
 import LocationDescription from "./descriptions/LocationDescription";
 import useFetch from "../api/useFetch";
+import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Card from "./cards/Card";
+const BASE_CHARACTERS_URL = "https://rickandmortyapi.com/api/character/?page=";
+const BASE_LOCATIONS_URL = "https://rickandmortyapi.com/api/location/?page="
+const BASE_CHARACTER_URL = "https://rickandmortyapi.com/api/character/"
+const BASE_LOCATION_URL = "https://rickandmortyapi.com/api/location/"
 
 function App() {
-  const planetTest =
-    "https://private-anon-80febb1f68-starhub.apiary-mock.com/api/planets";
-  const { data: characters } = useFetch(
-    "https://rickandmortyapi.com/api/character/?page="
-  );
-  const { data: locations } = useFetch(
-    "https://rickandmortyapi.com/api/location/?page="
-  );
-  const { data: example } = useFetch(
-    "https://private-anon-80febb1f68-starhub.apiary-mock.com/api/planets"
-  );
+  const [charactersURL,setCharactersURL] = useState(BASE_CHARACTERS_URL);
+  const [characterURL,setCharacterURL] = useState(BASE_CHARACTER_URL);
+  const [locationsURL,setLocationsURL] = useState(BASE_LOCATIONS_URL);
+  const [locationURL,setLocationURL] = useState(BASE_LOCATION_URL);
+  const handleCharactersIDChange = (pageID)=>{
+    setCharactersURL(BASE_CHARACTERS_URL+pageID)
+  }
+  const handleCharacterIDChange = (pageID)=>{
+    setCharacterURL(BASE_CHARACTER_URL+pageID)
+  }
+  const handleLocationsIDChange = (pageID)=>{
+    setLocationsURL(BASE_LOCATIONS_URL+pageID)
+  }
+  const handleLocationIDChange = (pageID)=>{
+    setLocationURL(BASE_LOCATION_URL+pageID)
+  }
+  const { data: characters } = useFetch(charactersURL);
+  const { data: character } = useFetch(characterURL);
+  const { data: locations } = useFetch(locationsURL);
+  const { data: location } = useFetch(locationURL);
+
 
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
-          path="/characters"
-          element={
-            characters && <CharacterList characters={characters.results}/>
-          }
-        />
-        <Route
-          path="/locations"
-          element={
-            locations && <LocationList locations={locations.results} />
-          }
-        />
-        <Route
           path="/characters/:id"
           element={
-            characters &&<CharacterDescription characters={characters.results}/>
+            characters && <CharacterList characters={characters.results} IDChange={handleCharactersIDChange}/>
           }
         />
         <Route
           path="/locations/:id"
           element={
-            locations &&  <LocationDescription  locations={locations.results}/>
+            locations && <LocationList locations={locations.results} IDChange={handleLocationsIDChange}/>
+          }
+        />
+        <Route
+          path="/character/:id"
+          element={
+            character &&<CharacterDescription character={character} IDChange={handleCharacterIDChange}/>
+          }
+        />
+        <Route
+          path="/location/:id"
+          element={
+            location &&  <LocationDescription  location={location} IDChange={handleLocationIDChange}/>
           }
         />
       </Routes>

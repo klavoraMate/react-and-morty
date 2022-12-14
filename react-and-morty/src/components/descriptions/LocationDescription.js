@@ -1,9 +1,10 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
 
-const LocationDescription = ({locations}) => {
+const LocationDescription = ({location,IDChange}) => {
     const {id} = useParams();
-    console.log(locations[Number(id)-1]);
+    IDChange(id)
+    console.log(location);
   return (
     <div>LocationDescription</div>
   )

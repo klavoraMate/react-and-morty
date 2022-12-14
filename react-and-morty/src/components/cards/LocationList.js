@@ -1,5 +1,9 @@
+import { useParams } from "react-router-dom"
 import Card from "./Card"
-const LocationList = ({ locations }) => {
+
+const LocationList = ({ locations ,IDChange}) => {
+  const {id} = useParams();
+  IDChange(id)
     return (
       <div>
         {locations.map((location) => (

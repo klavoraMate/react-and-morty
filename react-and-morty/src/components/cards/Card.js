@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom'
 
 const Card = ({id,img,name,identity}) => {
   const setNavigateToURL = ()=>{
-      if(identity === 'character') return `/characters/${id}`
-      if(identity === 'location') return `/locations/${id}`
+      if(identity === 'character') return `/character/${id}`
+      if(identity === 'location') return `/location/${id}`
   };
   return (
     <Link to={setNavigateToURL()}>

@@ -1,9 +1,10 @@
 import React from 'react'
 import { useParams } from 'react-router-dom';
 
-const CharacterDescription = ({characters}) => {
+const CharacterDescription = ({character,IDChange}) => {
     const {id} = useParams();
-    console.log(characters[Number(id)-1]);
+    IDChange(id)
+    console.log(character);
   return (
     <div>CharacterDescription</div>
   )

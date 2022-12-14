@@ -1,6 +1,9 @@
 import Card from "./Card"
+import { useParams } from 'react-router-dom';
 
-const CharacterList = ({ characters}) => {
+const CharacterList = ({ characters,IDChange}) => {
+  const {id} = useParams();
+  IDChange(id)
   return (
     <div>
       {characters.map((character) => (
