@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'get_schwifty';
+  src: local('get_schwifty'), url(../src/style/get_schwifty.ttf) format('truetype');
+}
