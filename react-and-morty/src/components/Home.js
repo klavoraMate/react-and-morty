@@ -19,8 +19,12 @@ const Home = () => {
       {descriptionVisibility && <p>Description: On this website you can see characters and locations of the famous series React and Morty!
       </p>}
       <div>
-        <button onClick={() => navigateTo('./characters')}>Characters</button>
-        <button onClick={() => navigateTo('./locations')}>Locations</button>
+        <button
+          className="characters"
+          onClick={() => navigateTo('./characters')}>Characters</button>
+        <button
+          className="locations"
+          onClick={() => navigateTo('./locations')}>Locations</button>
       </div>
     </div>
   )
