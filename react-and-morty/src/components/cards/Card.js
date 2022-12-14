@@ -9,7 +9,7 @@ const Card = ({ id, img, name, identity }) => {
   };
   return (
     <Link to={setNavigateToURL()}>
-      <div className='card'>
+      <div className='inner-card'>
         <h3>{name}</h3>
         <img src={img} alt={name} />
       </div>
