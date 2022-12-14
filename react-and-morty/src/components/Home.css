@@ -1,0 +1,9 @@
+* {
+  padding: 1vh;
+}
+
+.Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
