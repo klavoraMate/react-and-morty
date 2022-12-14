@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom'
+import "../../style/cards.css"
+
 
 const Card = ({ id, img, name, identity }) => {
   const setNavigateToURL = () => {
@@ -7,9 +9,9 @@ const Card = ({ id, img, name, identity }) => {
   };
   return (
     <Link to={setNavigateToURL()}>
-      <div>
-        <img src={img} alt={name} />
+      <div className='card'>
         <h3>{name}</h3>
+        <img src={img} alt={name} />
       </div>
     </Link>
   )
