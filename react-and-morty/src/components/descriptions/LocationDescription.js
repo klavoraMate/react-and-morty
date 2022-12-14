@@ -6,7 +6,11 @@ const LocationDescription = ({location,IDChange}) => {
     IDChange(id)
     console.log(location);
   return (
-    <div>LocationDescription</div>
+    <div>
+      <h2>{location.name}</h2>
+      <h3>Origin: {location.dimension}</h3>
+      {location.type && <p>Type: {location.type}</p>}
+    </div>
   )
 }
 
