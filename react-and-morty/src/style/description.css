@@ -1,0 +1,66 @@
+* {
+  color: blueviolet;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2vh;
+
+}
+
+.main img {
+  width: 40vh;
+  height: 40vh;
+  margin-right: 10vh;
+  border-style: solid;
+  border-top-color: rgb(32, 177, 19);
+  border-bottom-color: rgb(32, 177, 19);
+  border-color: 2px solid blueviolet;
+  border-radius: 50%;
+
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 10vh;
+  margin-right: 10vh;
+  margin-top: 5vh;
+}
+
+.main * {
+  margin-left: 5vh;
+  margin-right: 5vh;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 3vh;
+  flex-wrap: wrap;
+  border-style: dashed;
+  border-radius: 5vh;
+}
+
+.info div {
+  padding: 2vh;
+}
+
+h2 {
+  max-width: 90vh;
+  font-size: 13vh;
+  font-optical-sizing: auto;
+  color: rgb(192, 149, 231);
+}
+
+p {
+  font-size: 5vh;
+  color: rgb(192, 149, 231);
+}

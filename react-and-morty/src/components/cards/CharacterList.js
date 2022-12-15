@@ -1,34 +1,26 @@
 import Card from "./Card"
 import { useParams } from 'react-router-dom';
-import { useState } from "react";
-import useCharacters from "../hooks/usecharacters";
+import useFetch from "../../api/useFetch";
+import { mainUrls } from "../../api/dataRoutes";
+import "../../style/cards.css"
 
-const CharacterList = ({ characters, IDChange }) => {
-
-  const [pageNum, setPageNum] = useState(1);
-  const {
-    isLoading,
-    isError,
-    error,
-    results,
-    hasNextPage
-  } = useCharacters(pageNum)
-
-  if (isError) return <p>{error.message}</p>
-
-  const content = results
-
+const CharacterList = () => {
   const { id } = useParams();
-  IDChange(id)
-  return (
-    <div>
-      {characters.map((character) => (
-        <div key={character.id} >
-          <Card id={character.id} img={character.image} name={character.name} identity="character" />
-        </div>
-      ))}
-    </div>
-  )
+  const { data: characters } = useFetch(mainUrls.characters + id);
+  if (characters) {
+    return (
+      <div className="character-list">
+        {characters.results.map((character) => (
+          <div className="card" key={character.id} >
+            <Card id={character.id} img={character.image} name={character.name} identity="character" />
+          </div>
+        ))}
+      </div>
+    )
+  }
+
 }
+
+
 
 export default CharacterList

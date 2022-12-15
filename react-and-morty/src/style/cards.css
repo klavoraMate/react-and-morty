@@ -1,0 +1,47 @@
+.character-list {
+  margin: 2vh;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  display: flex;
+  flex-direction: row;
+  font-size: 50px;
+  height: 100px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  width: 72vh;
+}
+
+.inner-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vh;
+  margin: 1vh;
+  border-style: dashed;
+  border-color: blueviolet;
+  max-width: 70vh;
+  color: blueviolet;
+}
+
+.card h3 {
+  color: rgb(192, 149, 231);
+  margin: 1vh;
+}
+
+.card img {
+  margin: 1vh;
+  border-radius: 50%;
+  padding: 1vh;
+  border-style: solid;
+  border-top-color: rgb(32, 177, 19);
+  border-bottom-color: rgb(32, 177, 19);
+  border-color: 2px solid blueviolet;
+  max-height: 20vh;
+}
+
+a {
+  text-decoration: none;
+}
