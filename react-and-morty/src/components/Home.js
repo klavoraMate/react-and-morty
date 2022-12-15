@@ -21,10 +21,10 @@ const Home = () => {
       <div>
         <button
           className="characters"
-          onClick={() => navigateTo('./characters/1')}>Characters</button>
+          onClick={() => navigateTo('./characters/')}>Characters</button>
         <button
           className="locations"
-          onClick={() => navigateTo('./locations/1')}>Locations</button>
+          onClick={() => navigateTo('./locations/')}>Locations</button>
       </div>
     </div>
   )
