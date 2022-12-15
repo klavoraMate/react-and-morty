@@ -1,4 +1,3 @@
-import "./App.css";
 import Home from "./Home";
 import CharacterList from "./cards/CharacterList";
 import LocationList from "./cards/LocationList";
