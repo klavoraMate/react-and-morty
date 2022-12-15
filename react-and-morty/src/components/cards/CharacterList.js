@@ -17,7 +17,7 @@ const CharacterList = () => {
     if (loading) return
     if (observer.current) observer.current.disconnect()
     observer.current = new IntersectionObserver(entries => {
-      if (entries[0].isIntersecting) {
+      if (entries[0].isIntersecting && hasMore) {
         console.log(lastCard);
         setPageNumber(current => current + 1)
       }
@@ -26,7 +26,6 @@ const CharacterList = () => {
   }, [loading, hasMore])
 
   if (characters.length) {
-    console.log('RUN');
     return (
 
       <div className="character-list">
