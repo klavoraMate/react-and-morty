@@ -12,7 +12,7 @@ const CharacterList = () => {
       <div className="character-list">
         {characters.results.map((character) => (
           <div className="card" key={character.id} >
-            <Card id={character.id} img={character.image} name={character.name} identity="character" />
+            <Card url={"/character/" + character.id} img={character.image} name={character.name} style={{}} />
           </div>
         ))}
       </div>
