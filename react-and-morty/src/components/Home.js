@@ -16,7 +16,7 @@ const Home = () => {
     <div className="Home">
       <img src="/images/Daco_4305710.png" alt="React And Morty" className="r-a-m" />
       <img src="/images/Daco_4407915.png" alt="Rect and Morty group" className="logo" />
-      {descriptionVisibility && <p>Description: On this website you can see characters and locations of the famous series React and Morty!
+      {descriptionVisibility && <p>On this website you can see characters and locations of the famous series Rick and Morty!
       </p>}
       <div>
         <button

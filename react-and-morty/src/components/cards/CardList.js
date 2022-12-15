@@ -3,7 +3,7 @@ import { useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 
 
-const CardList = ({ identities, hasMore, loading, handleSetPageNumber , url,style}) => {
+const CardList = ({ identities, hasMore, loading, handleSetPageNumber, url, style }) => {
   const observer = useRef();
   const lastCardRef = useCallback(lastCard => {
     if (loading) return
