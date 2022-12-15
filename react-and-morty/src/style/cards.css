@@ -5,9 +5,25 @@
   display: flex;
   flex-direction: row;
   font-size: 50px;
+  font-family: get_schwifty, serif;
   height: 100px;
   flex-wrap: wrap;
   justify-content: space-around;
+  color: blueviolet;
+}
+
+
+
+@keyframes glow {
+  from {
+    color: rgb(23, 120, 139);
+    text-shadow: 0 0 10px rgb(99, 255, 32), 0 0 10px rgb(99, 255, 32), 0 0 15px rgb(122 243 69), 0 0 20px rgb(122 243 69), 0 0 25px rgb(122 243 69), 0 0 30px rgb(122 243 69), 0 0 35px rgb(122 243 69);
+  }
+
+  to {
+    color: rgb(30, 218, 255);
+    text-shadow: 0 0 10px rgb(0, 0, 0), 0 0 15px rgb(48, 134, 11), 0 0 20px rgb(48, 134, 11), 0 0 25px rgb(48, 134, 11), 0 0 30px rgb(48, 134, 11), 0 0 35px rgb(48, 134, 11), 0 0 40px rgb(48, 134, 11);
+  }
 }
 
 .card {
@@ -27,8 +43,10 @@
 }
 
 .card h3 {
-  color: rgb(192, 149, 231);
   margin: 1vh;
+
+  text-align: center;
+  animation: glow 1s ease-in-out infinite alternate;
 }
 
 .card img {
@@ -38,7 +56,8 @@
   border-style: solid;
   border-top-color: rgb(32, 177, 19);
   border-bottom-color: rgb(32, 177, 19);
-  border-color: 2px solid blueviolet;
+  border-right-color: blueviolet;
+  border-left-color: blueviolet;
   max-height: 20vh;
 }
 
