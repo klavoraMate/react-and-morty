@@ -15,5 +15,5 @@ code {
 
 @font-face {
   font-family: 'get_schwifty';
-  src: local('get_schwifty'), url(../src/style/get_schwifty.ttf) format('truetype');
+  src: local('get_schwifty'), url(./get_schwifty.ttf) format('truetype');
 }
