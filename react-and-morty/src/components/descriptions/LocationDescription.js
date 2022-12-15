@@ -3,7 +3,7 @@ import useFetch from '../../api/useFetchSingle';
 import { mainUrls } from '../../api/dataRoutes';
 import { useParams, Link } from 'react-router-dom';
 import "../../style/description.css"
-import Card from '../cards/Card';
+import LocationCharacterCard from '../cards/LocationCharacterCard';
 
 
 const LocationDescription = () => {
@@ -17,23 +17,20 @@ const LocationDescription = () => {
         </Link>
         <div className='main'>
           <h2>{location.name}</h2>
-          <img src={mainUrls.planetImg} alt="generic planet drawing" />
+          <img id="planet" src={mainUrls.planetImg} alt="generic planet drawing" />
         </div>
-        <div className='info'>
-          <div>
-            <p>Type: {location.type}</p>
-            <p>Dimension: {location.dimension}</p>
-          </div>
-          <div className="character-list">
-            {location.residents.map((character) => {
-              console.log(character);
-              return (
-                <div className="card" key={character.id} >
-                  <Card url={"/character/" + character.id} img={character.image} name={character.name} style={{}} />
-                </div>
-              )
-            })}
-          </div>
+        <div className='location_info'>
+          <p>Type: {location.type}</p>
+          <p>Dimension: {location.dimension}</p>
+        </div>
+        <div className="character-list">
+          {location.residents.map((character, index) => {
+            return (
+              <div className="card" key={index} >
+                <LocationCharacterCard apiUrl={character} />
+              </div>
+            )
+          })}
         </div>
       </div>
     )

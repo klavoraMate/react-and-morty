@@ -21,7 +21,6 @@ const CharacterList = () => {
       loading={loading}
       handleSetPageNumber={handleSetPageNumber}
       url={/character/}
-      style={{}}
     />
   )
 

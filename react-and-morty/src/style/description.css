@@ -43,9 +43,15 @@
   margin-top: 5vh;
 }
 
+
+
 .main * {
   margin-left: 5vh;
   margin-right: 5vh;
+}
+
+#planet {
+  filter: opacity(0.4) drop-shadow(0 0 0 rgb(7, 255, 214));
 }
 
 .info {
@@ -57,6 +63,17 @@
   flex-wrap: wrap;
   border-style: dashed;
   border-radius: 5vh;
+}
+
+.location_info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 3vh;
+  flex-wrap: wrap;
+  border-style: dashed;
+  border-radius: 2vh;
 }
 
 .info div {

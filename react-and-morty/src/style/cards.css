@@ -61,6 +61,15 @@
   max-height: 20vh;
 }
 
+#list-back-button {
+  font-size: xx-large;
+  background-color: blueviolet;
+  border-color: rgb(32, 177, 19);
+  color: rgb(101, 198, 218);
+  text-shadow: 0 0 20px rgb(32, 177, 19), 0 0 30px rgb(32, 177, 19);
+  position: fixed;
+}
+
 
 a {
   text-decoration: none;
