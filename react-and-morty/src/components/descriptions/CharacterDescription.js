@@ -1,5 +1,5 @@
 import React from 'react'
-import useFetch from '../../api/useFetchList';
+import useFetch from '../../api/useFetchSingle';
 import { mainUrls } from '../../api/dataRoutes';
 import { useParams, Link } from 'react-router-dom';
 import "../../style/description.css"
@@ -10,7 +10,7 @@ const CharacterDescription = () => {
   if (character) {
     return (
       <div className='description'>
-        <Link to='../../characters/1'>
+        <Link to='../../characters/'>
           <button>Back</button>
         </Link>
         <div className='main'>

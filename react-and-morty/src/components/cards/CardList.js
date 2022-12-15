@@ -22,13 +22,13 @@ const CardList = ({ identities, hasMore, loading, handleSetPageNumber , url,styl
           if (identities.length === index + 1) {
             return (
               <div className="card" key={identity.id} ref={lastCardRef} >
-                <Card  img={identity.img} name={identity.name} style={style} url={url+identity.id}/>
+                <Card  img={identity.image} name={identity.name} style={style} url={url+identity.id}/>
               </div>
             )
           }
           return (
             <div className="card" key={identity.id} >
-              <Card img={identity.img} name={identity.name} style={style} url={url+identity.id}/>
+              <Card img={identity.image} name={identity.name} style={style} url={url+identity.id}/>
             </div>
           )
         })}

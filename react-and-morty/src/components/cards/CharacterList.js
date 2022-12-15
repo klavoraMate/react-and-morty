@@ -20,7 +20,7 @@ const CharacterList = () => {
       hasMore={hasMore}
       loading={loading}
       handleSetPageNumber={handleSetPageNumber}
-      url={'/character/'}
+      url={/character/}
       style={{}}
     />
   )

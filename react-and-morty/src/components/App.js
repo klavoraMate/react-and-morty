@@ -13,13 +13,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
-          path="/characters/:id"
+          path="/characters/"
           element={
             <CharacterList />
           }
         />
         <Route
-          path="/locations/:id"
+          path="/locations/"
           element={
             <LocationList />
           }

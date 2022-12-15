@@ -1,5 +1,5 @@
 import React from 'react'
-import useFetch from '../../api/useFetchList';
+import useFetch from '../../api/useFetchSingle';
 import { mainUrls } from '../../api/dataRoutes';
 import { useParams, Link } from 'react-router-dom';
 import "../../style/description.css"
@@ -12,7 +12,7 @@ const LocationDescription = () => {
   if (location) {
     return (
       <div className='description'>
-        <Link to='../../locations/1'>
+        <Link to='../../locations/'>
           <button>Back</button>
         </Link>
         <div className='main'>
