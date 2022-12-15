@@ -1,7 +1,7 @@
 import React from 'react'
 import useFetch from '../../api/useFetch';
 import { mainUrls } from '../../api/dataRoutes';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import "../../style/description.css"
 
 const CharacterDescription = () => {
@@ -10,6 +10,9 @@ const CharacterDescription = () => {
   if (character) {
     return (
       <div className='description'>
+        <Link to='../../characters/1'>
+          <button>Back</button>
+        </Link>
         <div className='main'>
           <h2>{character.name}</h2>
           <img src={character.image} alt={character.name} />

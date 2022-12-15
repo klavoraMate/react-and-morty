@@ -8,6 +8,16 @@
   justify-content: space-between;
   padding: 2vh;
 
+
+}
+
+.description button {
+  font-size: xx-large;
+  background-color: blueviolet;
+  border-color: rgb(32, 177, 19);
+  color: rgb(101, 198, 218);
+  text-shadow: 0 0 20px rgb(32, 177, 19), 0 0 30px rgb(32, 177, 19);
+
 }
 
 .main img {
@@ -58,6 +68,22 @@ h2 {
   font-size: 13vh;
   font-optical-sizing: auto;
   color: rgb(192, 149, 231);
+  font-family: get_schwifty, serif;
+  animation: glow 1s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes glow {
+  from {
+    color: rgb(23, 120, 139);
+    text-shadow: 0 0 10px rgb(99, 255, 32), 0 0 10px rgb(99, 255, 32), 0 0 15px rgb(122 243 69), 0 0 20px rgb(122 243 69), 0 0 25px rgb(122 243 69), 0 0 30px rgb(122 243 69), 0 0 35px rgb(122 243 69);
+  }
+
+  to {
+    color: rgb(30, 218, 255);
+    text-shadow: 0 0 10px rgb(0, 0, 0), 0 0 15px rgb(48, 134, 11), 0 0 20px rgb(48, 134, 11), 0 0 25px rgb(48, 134, 11), 0 0 30px rgb(48, 134, 11), 0 0 35px rgb(48, 134, 11), 0 0 40px rgb(48, 134, 11);
+  }
 }
 
 p {
