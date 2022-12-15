@@ -2,13 +2,40 @@ import { useState, useEffect } from 'react';
 
 
 const useFetch = (url) => {
-  const [data, setData] = useState(null);
+
+  const [loading, setLoading] = useState(true);
+  const [hasMore, setHasMore] = useState(false)
+  const [data, setData] = useState([]);
+
   useEffect(() => {
-    fetch(url)
+    setLoading(true)
+
+    const controller = new AbortController()
+    const { signal } = controller
+
+    fetch(url, { signal })
       .then((response) => response.json())
-      .then((data) => setData(data));
+      .then((fetchedData) => {
+        console.log('FETCHED DATA LENGTH: ', fetchedData.results.length)
+        setHasMore(fetchedData.results.length > 0)
+        setLoading(false)
+        return setData(previousData => [...previousData, ...fetchedData.results])
+      })
+      .catch((err) => {
+        setLoading(false)
+        if (signal.aborted) return console.log(err)
+        if (err) {
+          console.log('There are no more pages')
+          setHasMore(false)
+          console.log(err)
+
+
+        }
+
+      })
+    return () => controller.abort()
   }, [url]);
-  return { data };
+  return { data, loading, hasMore };
 };
 
 export default useFetch;

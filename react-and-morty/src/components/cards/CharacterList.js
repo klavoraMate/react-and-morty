@@ -1,24 +1,30 @@
-import Card from "./Card"
-import { useParams } from 'react-router-dom';
+import "../../style/cards.css"
+import CardList from './CardList';
 import useFetch from "../../api/useFetch";
 import { mainUrls } from "../../api/dataRoutes";
-import "../../style/cards.css"
+import { useState } from "react";
 
 const CharacterList = () => {
-  const { id } = useParams();
-  const { data: characters } = useFetch(mainUrls.characters + id);
-  if (characters) {
-    return (
-      <div className="character-list">
-        {characters.results.map((character) => (
-          <div className="card" key={character.id} >
-            <Card url={"/character/" + character.id} img={character.image} name={character.name} style={{}} />
-          </div>
-        ))}
-      </div>
-    )
+  //const { id } = useParams();
+
+  const [pageNumber, setPageNumber] = useState(1)
+  const { data: characters, hasMore, loading } = useFetch(mainUrls.characters + pageNumber);
+
+  const handleSetPageNumber = () => {
+    setPageNumber(current => current + 1)
   }
 
+  return (
+    <CardList
+      identities={characters}
+      hasMore={hasMore}
+      loading={loading}
+      handleSetPageNumber={handleSetPageNumber}
+    />
+  )
+
 }
+
+
 
 export default CharacterList
