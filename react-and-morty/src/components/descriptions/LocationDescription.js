@@ -23,7 +23,7 @@ const LocationDescription = () => {
           <p>Type: {location.type}</p>
           <p>Dimension: {location.dimension}</p>
         </div>
-        <div className="character-list">
+        <div className="list">
           {location.residents.map((character, index) => {
             return (
               <div className="card" key={index} >

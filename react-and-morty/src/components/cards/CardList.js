@@ -3,7 +3,7 @@ import { useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 
 
-const CardList = ({ identities, hasMore, loading, handleSetPageNumber, url, style }) => {
+const CardList = ({ identities, hasMore, loading, handleSetPageNumber, url }) => {
   const observer = useRef();
   const lastCardRef = useCallback(lastCard => {
     if (loading) return
@@ -22,7 +22,7 @@ const CardList = ({ identities, hasMore, loading, handleSetPageNumber, url, styl
       <Link to='/'>
           <button id="list-back-button">Back</button>
       </Link>
-      <div className="character-list">
+      <div className="list">
         {identities.map((identity, index) => {
           if (identities.length === index + 1) {
             return (
