@@ -1,6 +1,6 @@
 import "../../style/cards.css"
 import CardList from './CardList';
-import useFetch from "../../api/useFetch";
+import useFetch from "../../api/useFetchList";
 import { mainUrls } from "../../api/dataRoutes";
 import { useState } from "react";
 
@@ -20,6 +20,8 @@ const CharacterList = () => {
       hasMore={hasMore}
       loading={loading}
       handleSetPageNumber={handleSetPageNumber}
+      url={'/character/'}
+      style={{}}
     />
   )
 

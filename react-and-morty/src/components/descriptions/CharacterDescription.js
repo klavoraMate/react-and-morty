@@ -1,5 +1,5 @@
 import React from 'react'
-import useFetch from '../../api/useFetch';
+import useFetch from '../../api/useFetchList';
 import { mainUrls } from '../../api/dataRoutes';
 import { useParams, Link } from 'react-router-dom';
 import "../../style/description.css"
