@@ -59,6 +59,7 @@
   border-right-color: blueviolet;
   border-left-color: blueviolet;
   max-height: 20vh;
+
 }
 
 #list-back-button {
@@ -68,6 +69,12 @@
   color: rgb(101, 198, 218);
   text-shadow: 0 0 20px rgb(32, 177, 19), 0 0 30px rgb(32, 177, 19);
   position: fixed;
+  border-radius: 2vh;
+}
+
+#list-back-button:hover {
+  background-color: rgb(101, 198, 218);
+  color: blueviolet;
 }
 
 

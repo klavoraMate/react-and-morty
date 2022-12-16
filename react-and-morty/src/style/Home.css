@@ -8,7 +8,9 @@ body {
 }
 
 p {
-  font-size: 3vh;
+  max-width: 130vh;
+  font-size: 2.5vh;
+  text-align: center;
 }
 
 .Home {
