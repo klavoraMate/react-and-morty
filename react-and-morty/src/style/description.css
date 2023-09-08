@@ -56,9 +56,6 @@
   margin-right: 5vh;
 }
 
-#planet {
-  filter: opacity(0.4) drop-shadow(0 0 0 rgb(7, 255, 214));
-}
 
 .info {
   display: flex;

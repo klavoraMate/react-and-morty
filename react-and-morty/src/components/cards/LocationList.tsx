@@ -2,13 +2,14 @@ import "../../style/cards.css"
 import CardList from './CardList';
 import useFetch from "../../api/useFetchList";
 import { mainUrls } from "../../api/dataRoutes";
-import { useState } from "react";
+import React, { useState } from "react";
 
-const CharacterList = () => {
-  //const { id } = useParams();
+
+
+const LocationList: React.FC = () => {
 
   const [pageNumber, setPageNumber] = useState(1)
-  const { data: characters, hasMore, loading } = useFetch(mainUrls.characters + pageNumber);
+  const { data: locations, hasMore, loading } = useFetch(mainUrls.locations + pageNumber);
 
   const handleSetPageNumber = () => {
     setPageNumber(current => current + 1)
@@ -16,11 +17,11 @@ const CharacterList = () => {
 
   return (
     <CardList
-      identities={characters}
+      identities={locations}
       hasMore={hasMore}
       loading={loading}
       handleSetPageNumber={handleSetPageNumber}
-      url={/character/}
+      url={"/location/"}
     />
   )
 
@@ -28,4 +29,5 @@ const CharacterList = () => {
 
 
 
-export default CharacterList
+
+export default LocationList

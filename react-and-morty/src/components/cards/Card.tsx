@@ -1,6 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import {mainUrls} from '../../api/dataRoutes';
+import { Link } from 'react-router-dom';
+import { mainUrls } from '../../api/dataRoutes';
 
 import '../../style/cards.css';
 
@@ -11,7 +11,7 @@ interface CardProps {
     style?: React.CSSProperties;
 }
 
-const Card: React.FC<CardProps> = ({img, name, url, style}) => {
+const Card: React.FC<CardProps> = ({ img, name, url, style }) => {
     const imgSrc = typeof img === 'string' ? img : mainUrls.planetImg;
 
     return (
